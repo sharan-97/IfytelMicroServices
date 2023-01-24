@@ -1,0 +1,5 @@
+package com.infytel.customer.configuration;
+
+public class CustomerConfiguration {
+
+}

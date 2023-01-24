@@ -1,0 +1,11 @@
+spring.application.name=Infytelcustomer
+server.port=8001
+
+muruga.ribbon.eureka.enabled=false
+muruga.ribbon.listOfServers=http://localhost:8402
+
+spring.config.import=optional:configserver:http://localhost:1111
+#management.endpoints.web.exposure.include=*
+
+
+spring.jackson.default-property-inclusion: NON_NULL

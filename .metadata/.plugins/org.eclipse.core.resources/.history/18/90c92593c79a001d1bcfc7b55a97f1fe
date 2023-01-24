@@ -1,0 +1,8 @@
+spring.application.name=InfytelConfigServer
+server.port=1111
+
+#the below default-label is used to set the branch
+#but make sure a default master branch is also present if not it throws error
+spring.cloud.config.server.git.default-label=test_branch
+spring.cloud.config.server.git.uri=https://github.com/sharan-97/infytel-config.git
+#spring.cloud.config.server.git.skip-ssl-validation = false
