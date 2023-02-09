@@ -24,6 +24,8 @@ import com.infytel.customer.dto.CustomerDTO;
 import com.infytel.customer.dto.LoginDTO;
 import com.infytel.customer.dto.PlanDTO;
 import com.infytel.customer.service.CustomerService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 
 //@RefreshScope
@@ -68,10 +70,13 @@ public class CustomerController {
 
 	// Fetches full profile of a specific customer
 	
+	@HystrixCommand(fallbackMethod = "getCustomerProfileFallBack1")
 	@GetMapping(value = "/customers/{phoneNo}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public CustomerDTO getCustomerProfile(@PathVariable Long phoneNo) {
+	public CustomerDTO getCustomerProfile(@PathVariable Long phoneNo) throws InterruptedException {
 
 		logger.info("Profile request for customer {}", phoneNo);
+		System.out.println("*************in temp menthod*****************");
+		
 		CustomerDTO customerDTO =custService.getCustomerProfile(phoneNo);
 		
 //		List<ServiceInstance> planInstance =   discoveryClient.getInstances("INFYTELPLANS");
@@ -94,6 +99,11 @@ public class CustomerController {
 		customerDTO.setFriendAndFamily(friends);
 		customerDTO.setCurrentPlan(planDTO);
 		return customerDTO;
+	}
+	
+	public CustomerDTO getCustomerProfileFallBack1(Long phoneNo) {
+		System.out.println("###########Inside fall back menthod#######");
+		return new CustomerDTO();
 	}
 	
 
