@@ -1,9 +1,0 @@
-spring.application.name=Infytelcustomer
-server.port=8001
-
-spring.config.import=optional:configserver:http://localhost:1111
-#management.endpoints.web.exposure.include=*
-
-custribbon.ribbon.eureka.enabled=false
-custribbon.ribbon.listOfServers=http://localhost:8402
-spring.jackson.default-property-inclusion: NON_NULL

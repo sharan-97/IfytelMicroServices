@@ -8,4 +8,8 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
     <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.DiscoveryClient"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.client.ServiceInstance"/>
+    <fullyQualifiedTypeName name="com.ctc.wstx.shaded.msv_core.util.Uri"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
 </qualifiedTypeNameHistroy>

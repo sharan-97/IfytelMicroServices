@@ -31,7 +31,8 @@ public class PlanController {
 	// to fetch a specific plan bro
 	@GetMapping(value = "/plans/{planId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public PlanDTO getSpecificPlan(@PathVariable Integer planId) {
-		logger.info("im in the specific plan controller");
+		
+
 		return planService.getSpecificPlan(planId);
 	}
 

@@ -97,6 +97,8 @@ public class CustomerDTO {
 		custDTO.setName(cust.getName());
 		custDTO.setPhoneNo(cust.getPhoneNo());
 		custDTO.setAddress(cust.getAddress());
+		//this is not set as nobody wants their password to be seen haha
+//		custDTO.setPassword(cust.getPassword());	
 		PlanDTO planDTO = new PlanDTO();
 		planDTO.setPlanId(cust.getPlanId());
 		

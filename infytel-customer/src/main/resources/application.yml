@@ -1,0 +1,24 @@
+resilience4j.circuitbreaker: 
+    instances: 
+        customerService:            
+            failureRateThreshold: 50 
+            waitDurationInOpenState: 30s 
+            automaticTransitionFromOpenToHalfOpenEnabled: true 
+            minimumNumberOfCalls: 5
+            
+#spring:
+#  application:
+#    name: Infytelcustomer
+#  cloud:
+#    consul:
+#      host: localhost
+#      config:
+#        fail-fast: false
+#        enabled: true
+#        prefixes: config
+#        defaultContext: application
+#        data-key: data
+#        profileSeparator: '::'
+#        format: YAML
+
+

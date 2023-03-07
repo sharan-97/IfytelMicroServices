@@ -36,7 +36,13 @@ public class FreindFamilyController {
 	
 	@GetMapping(value="/customers/getlist/{phoneNo}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Long> getForSpecificNumber(@PathVariable Long phoneNo){
-             
+
+		System.out.println("in friend class");
+		//temporary for hystrix testing
+		if(phoneNo == 9009009002l) {
+			
+			throw new RuntimeException();
+		}
 		logger.info("inside friend controller");
 		return friendFamilyService.getForSpecificNumber(phoneNo);
 		
